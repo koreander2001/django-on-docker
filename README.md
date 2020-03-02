@@ -12,6 +12,7 @@
 3. 下記コマンドを実行
   ~~~
   $ docker-compose build
+  $ ./init.sh
   $ docker-compose up -d
   ~~~
 
