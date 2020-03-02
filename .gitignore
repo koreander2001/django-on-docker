@@ -1,9 +1,6 @@
 /.env
 
-/django/*
-!/django/Dockerfile
-!/django/requirements.txt
-!/django/local_settings.py
+/django/apps/
 
 /dbdata/
 

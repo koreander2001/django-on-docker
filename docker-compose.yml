@@ -17,12 +17,14 @@ services:
         - DJANGO_PROJECT_NAME
         - POSTGRES_PORT
         - POSTGRES_PASSWORD
+    image: django-on-docker
     expose:
       - 3031
     depends_on:
       - postgres
     command: bash -c "python manage.py migrate && gunicorn ${DJANGO_PROJECT_NAME}.wsgi -b 0.0.0.0:3031"
     volumes:
+      - ./django/apps:/opt/apps/
       - ./staticdata:/opt/static/
     environment:
       - POSTGRES_PASSWORD
