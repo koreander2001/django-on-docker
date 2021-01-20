@@ -15,6 +15,12 @@ services:
   python:
     build: ./python
     command: uwsgi --socket :8001 --module ${DJANGO_PROJECT_NAME}.wsgi --logto /tmp/uwsgi.log
+    environment:
+      - MYSQL_DATABASE
+      - MYSQL_USER
+      - MYSQL_PASSWORD
+      - MYSQL_ROOT_PASSWORD
+      - TZ
     volumes:
       - ./src:/code
       - ./static:/static
